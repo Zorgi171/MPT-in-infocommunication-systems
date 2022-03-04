@@ -1,0 +1,28 @@
+﻿@page "{handler?}"
+
+@model WebAppCoreProduct.Pages.ProductModel
+@*
+    Форма для отправки данных
+*@
+<form method="post">
+    <label for="name">Название товара</label><br />
+    <input type="text" name="name" /><br />
+    <label for="price">Цена</label><br />
+    <input type="number" name="price" /><br /><br />
+    @* Кнопка получения скидки (обработчик POST) *@
+    @* Значение скидки в обработчике *@
+    <input type="submit" asp-page-handler="" value="Получить скидку" /><br />
+    @* Поля учета личной скидки (определеный сценарий POST запроса) *@
+    <label for="discont">Введите свою скидку(%)</label><br />
+    <input type="number" name="discont" /><br />
+    @* Кнопка для POST со сценарием *@
+    @* Своя скидка (вводим) *@
+    <input type="submit" asp-page-handler="Discont" value="Стоимость с учетом своей скидки" /><br />
+    @* Поля учета скидки по количеству (POST запроса №3) *@
+    <label for="amount">Введите количество товара</label><br />
+    <input type="number" name="amount" /><br />
+    @* Кнопка для POST №3 *@
+    @* Рассчет по значению поля amount *@
+    <input type="submit" asp-page-handler="Amount" value="Стоимость с учетом количества" /><br />
+</form>
+<h3>@Model.MessageRezult</h3>

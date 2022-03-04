@@ -1,0 +1,27 @@
+﻿@*
+    мастер-страница
+    содержит базовый каркас html-страницы
+*@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Razor Pages</title>
+</head>
+<body>
+    <div>
+        <h1>Система учета</h1>
+        @*Навигационные ссылки *@
+        <div>
+            <ul>
+                <li><a asp-page="/Index">Главная</a></li>
+                <li><a asp-page="/Product">Продукт</a></li>
+            </ul>
+        </div> <hr />
+        @* Вставить содержимое других страниц *@
+        @RenderBody()
+    </div>
+    <hr />
+    <div>© 2022 - Осипов Н.А.</div>
+</body>
+</html>
